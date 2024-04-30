@@ -40,10 +40,9 @@ const convertValue = () => {
   }
 };
 
-changeMoney = () => {
+const changeMoney = () => {
   const currencyName = document.getElementById("currency-name");
   const currencyImg = document.getElementById("currency-img");
-  const correncyValueText = document.getElementById("currency-value-text");
 
   if (select.value === "€ Euro") {
     currencyName.innerHTML = "Euro";
@@ -58,7 +57,7 @@ changeMoney = () => {
   if (select.value === "₿ Bitcoin") {
     currencyName.innerHTML = "Bitcoin";
     currencyImg.src = "./assets/bitcoin.png";
-    currencyImg.style.width = "40px";
+    currencyImg.style.width = "38px";
   }
   console.log(select.value);
 
