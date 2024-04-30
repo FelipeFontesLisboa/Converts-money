@@ -43,6 +43,7 @@ const convertValue = () => {
 changeMoney = () => {
   const currencyName = document.getElementById("currency-name");
   const currencyImg = document.getElementById("currency-img");
+  const correncyValueText = document.getElementById("currency-value-text");
 
   if (select.value === "€ Euro") {
     currencyName.innerHTML = "Euro";
