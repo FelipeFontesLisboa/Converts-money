@@ -1,11 +1,11 @@
 const button = document.getElementById("currency-button");
 const select = document.getElementById("selectMoney");
 
+const dolar = 5.9;
 const euro = 5.5;
 const bitcoin = 333.897;
 
 const convertValue = () => {
-  // 3
   const inputReal = document.getElementById("input-real").value;
   const realValuelText = document.getElementById("real-value-text");
   const correncyValueText = document.getElementById("currency-value-text");
@@ -13,7 +13,7 @@ const convertValue = () => {
   realValuelText.innerHTML = new Intl.NumberFormat("pt-BR", {
     style: "currency",
     currency: "BRL",
-  }).format(inputReal); // '$100.00' onvert format money
+  }).format(inputReal);
 
   switch (select.value) {
     case "€ Euro":
@@ -36,34 +36,13 @@ const convertValue = () => {
       break;
 
     default:
-      console.error();
+      console.log(teste);
   }
-  //se tiver selecionado para euro faz a conversao  e divide REAL / EURO
-  // if (select.value === "€ Euro") {
-  //   correncyValueText.innerHTML = new Intl.NumberFormat("de-DE", {
-  //     style: "currency",
-  //     currency: "EUR",
-  //   }).format(inputReal / euro); // '$100.00' onvert format money
-  // }
-
-  // //se tiver selecionado para euro faz a conversao  e divide REAL / DOLA
-  // if (select.value === "UD$ Dólar americano") {
-  //   correncyValueText.innerHTML = new Intl.NumberFormat("en-US", {
-  //     style: "currency",
-  //     currency: "USD",
-  //   }).format(inputReal / dolar); // '$100.00' convert format money
-  // }
 };
 
-button.addEventListener("click", convertValue);
-select.addEventListener("change", changeMoney);
-
 changeMoney = () => {
-  //3
-
   const currencyName = document.getElementById("currency-name");
   const currencyImg = document.getElementById("currency-img");
-  const correncyValueText = document.getElementById("currency-value-text");
 
   if (select.value === "€ Euro") {
     currencyName.innerHTML = "Euro";
@@ -84,3 +63,6 @@ changeMoney = () => {
 
   convertValue();
 };
+
+button.addEventListener("click", convertValue);
+select.addEventListener("change", changeMoney);
